@@ -1,4 +1,4 @@
-package org.example.paydude;
+package org.unittest.paydude;
 
 import org.junit.jupiter.api.Test;
 

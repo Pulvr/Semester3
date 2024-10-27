@@ -1,4 +1,4 @@
-package org.example.paydude;
+package org.unittest.paydude;
 
 class PayDude {
     private long balance = 0; // Steht für eine beliebige Währung in Cents

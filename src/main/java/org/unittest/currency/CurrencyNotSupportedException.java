@@ -1,4 +1,4 @@
-package org.example.currency;
+package org.unittest.currency;
 
 class CurrencyNotSupportedException extends RuntimeException {
     public CurrencyNotSupportedException(String message) {

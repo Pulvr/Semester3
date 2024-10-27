@@ -1,4 +1,4 @@
-package org.example.currency;
+package org.unittest.currency;
 
 import java.util.HashMap;
 import java.util.Map;

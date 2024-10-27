@@ -1,4 +1,4 @@
-package org.example.currency;
+package org.unittest.currency;
 
 enum Currency {
     EURO, DOLLAR, INVALID

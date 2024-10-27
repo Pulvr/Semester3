@@ -1,4 +1,4 @@
-package org.example.hospital;
+package org.unittest.hospital;
 
 import java.util.LinkedList;
 

@@ -1,10 +1,7 @@
-package org.example.hospital;
+package org.unittest.hospital;
 
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import java.util.LinkedList;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -33,7 +30,7 @@ class HospitalTest {
 
     @Test
     void addTowPatientsOneBed(){
-        Hospital hospital = new Hospital(1);
+        Hospital hospital = new Hospital(2);
         Patient patient = new Patient("1");
         Patient patient2 = new Patient("2");
         hospital.add(patient);

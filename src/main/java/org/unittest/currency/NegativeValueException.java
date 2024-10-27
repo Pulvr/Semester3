@@ -1,4 +1,4 @@
-package org.example.currency;
+package org.unittest.currency;
 
 class NegativeValueException extends RuntimeException {
     public NegativeValueException(String message) {

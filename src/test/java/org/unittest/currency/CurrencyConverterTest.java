@@ -1,4 +1,4 @@
-package org.example.currency;
+package org.unittest.currency;
 
 import org.junit.jupiter.api.Test;
 

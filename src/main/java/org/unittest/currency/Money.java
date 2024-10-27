@@ -1,4 +1,4 @@
-package org.example.currency;
+package org.unittest.currency;
 
 record Money(double value, Currency currency) {
 }
