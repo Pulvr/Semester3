@@ -1,4 +1,4 @@
-package org.unittest;
+package org.unittest.listutil;
 
 import org.junit.jupiter.api.Test;
 
@@ -6,6 +6,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.NoSuchElementException;
 
+import static com.google.common.truth.Truth.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 
 class ListUtilTest {
@@ -15,11 +16,12 @@ class ListUtilTest {
         //Arrange
         List<String> actualList = ListUtil.createLinkedList();
         //Act
-        List<String> expcected = List.of("This", "will", "be", "tested", "with", "JUnit");
+        List<String> expected = List.of("This", "will", "be", "tested", "with", "JUnit");
         //Assert
         assertInstanceOf(LinkedList.class, actualList); //ist es wirklich eine Liste?
-        assertEquals(actualList,expcected);             //stimmt der Inhalt?
-
+        assertThat(expected).hasSize(6);   //Anzahl der Elemente testen
+        assertEquals(actualList,expected);             //stimmt der Inhalt?
+        //könnten schon zu viele asserts sein, eher für testzwecke
     }
 
     @Test

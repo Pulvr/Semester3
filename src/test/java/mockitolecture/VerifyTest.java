@@ -1,4 +1,4 @@
-package org.unittest;
+package mockitolecture;
 
 import org.junit.jupiter.api.Test;
 
@@ -11,6 +11,7 @@ public class VerifyTest {
 
     @Test
     void demo(){
+        //listen würde man normalerweise nicht mocken
         List<String> mockedList = mock();
 
         mockedList.add("one");
