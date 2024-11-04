@@ -17,9 +17,7 @@ class PayDudeTest {
     @Test
     void depositNegativeMoneyTest(){
         PayDude dude = new PayDude();
-        dude.deposit(-30);
-
-        assertEquals(-30,dude.getBalance());
+        assertThrows(PayDudeException.class,()->dude.deposit(-30) );
     }
 
     @Test

@@ -4,6 +4,7 @@ class PayDude {
     private long balance = 0; // Steht für eine beliebige Währung in Cents
 
     void deposit(long amount) { // Geld einzahlen
+        assertNotNegative(amount);
         balance += amount;
     }
 

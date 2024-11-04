@@ -7,8 +7,7 @@ import java.util.List;
 
 import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.ArgumentMatchers.anyString;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.*;
 
 class ArgumentMatchers {
 
@@ -16,11 +15,11 @@ class ArgumentMatchers {
     void demo() {
         List<String> mockedList = mock();
         // Stubbing mit anyInt()-Matcher
-        Mockito.when(mockedList.get(anyInt())).thenReturn("element"); // wenn get mit irgendeinen int-Wert aufgerufen, dann gebe "element" zurück.
+        when(mockedList.get(anyInt())).thenReturn("element"); // wenn get mit irgendeinen int-Wert aufgerufen, dann gebe "element" zurück.
 
         // Stubbing ist nur notwendig, wenn der Rückgabewert eine Rolle spielt (siehe .thenReturn).
         // Ansonsten lassen sich die Methoden der gemockten Klasse auch einfach direkt aufrufen:
-        mockedList.add("Hänno"); // Aufruf ohne kein stubbing
+        mockedList.add("Hänno"); // Aufruf ohne stubbing
 
         // Ausgabe: "element"
         System.out.println(mockedList.get(999));
