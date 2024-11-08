@@ -1,8 +1,12 @@
 package mockitolecture.orderservice;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.ArgumentMatchers.eq;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
 
 class OrderServiceTest {
 
@@ -12,7 +16,17 @@ class OrderServiceTest {
      * Prüfe, ob der placeOrder mit einem bestimmten Order-Object aufgerufen wurde.
      * */
 
+    OrderService mockedOrderService;
+
+    @BeforeEach
+    void setup(){
+        mockedOrderService = mock();
+    }
+
     @Test
-    void placeOrder() {
+    void placeOrderTest() {
+        Order myOrder = new Order("Rosinen",200);
+        mockedOrderService.placeOrder(myOrder);
+        verify(mockedOrderService).placeOrder(eq(myOrder));
     }
 }
