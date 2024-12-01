@@ -8,5 +8,5 @@ package higherorderfunctionstest;
  */
 @FunctionalInterface
 public interface Combiner<T, U> {
-    U combine(T element1, T element2);
+    U combine(T dataToCombine1, T dataToCombine2);
 }
