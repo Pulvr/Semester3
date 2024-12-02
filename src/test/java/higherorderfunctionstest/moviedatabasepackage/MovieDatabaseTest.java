@@ -25,10 +25,10 @@ class MovieDatabaseTest {
     private final MovieDatabase movieDatabase = new MovieDatabase(MOVIES);
 
     @Test
-    void forEachCallsLambdaWithEachMovie(){
+    void forEachCallsLambdaWithEachMovie() {
         List<Movie> movies = new LinkedList<>();
 
-        movieDatabase.forEach(movie->{
+        movieDatabase.forEach(movie -> {
             movies.add(movie); // This is not a pure lambda, but okay for this testcase, otherwise forEach not testable
             // Note: lambda returns void
         });
@@ -37,10 +37,12 @@ class MovieDatabaseTest {
     }
 
     @Test
-    void findMoviesByCategory(){
-        Collection<Movie> actual = movieDatabase.findByCategory(movie -> movie.hasCategory(Category.SCIFI) &&
-                                                                        movie.hasCategory(Category.ACTION));
-        assertThat(actual).containsExactly(List.of(
+    void findMoviesByCategory() {
+        Collection<Movie> actual = movieDatabase.findByCategory(movie ->
+                movie.hasCategory(Category.SCIFI) &&
+                        movie.hasCategory(Category.ACTION));
+
+        assertThat(actual).containsExactlyElementsIn(List.of(
                 new Movie("Guardians of the Galaxy", Category.ACTION, Category.SCIFI, Category.COMEDY),
                 new Movie("Terminator", Category.ACTION, Category.SCIFI),
                 new Movie("Dune", Category.ACTION, Category.SCIFI, Category.DRAMA)
