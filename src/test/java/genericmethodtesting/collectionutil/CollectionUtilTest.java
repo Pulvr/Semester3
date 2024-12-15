@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
@@ -13,10 +14,11 @@ class CollectionUtilTest {
     @Test
     void runAllTest() {
         List<String> executedTasks = new ArrayList<>();
+
         Thread theadWithNothing = new Thread(() -> executedTasks.add("nothing"));
         Runnable runTask = () -> executedTasks.add("again");
 
-        List<Runnable> runnableList = List.of(theadWithNothing, runTask);
+        Iterable<Runnable> runnableList = List.of(theadWithNothing, runTask);
 
         CollectionUtil.runAll(runnableList);
 
@@ -52,6 +54,29 @@ class CollectionUtilTest {
         CollectionUtil.copyNumbers(integerList, targetList);
 
         assertEquals(List.of(1, 2, 3, 4), targetList);
+    }
+
+    @Test
+    void findMaxInCollectionNumber() {
+        List<Integer> integerList = new ArrayList<>(List.of(-2, -20, 3, 50));
+        int maxElement = CollectionUtil.findMaxInList(integerList);
+        System.out.println(maxElement);
+        assertEquals(50, maxElement);
+    }
+
+    @Test
+    void findMaxInCollectionStrings() {
+        List<String> stringList = new ArrayList<>(List.of("Hans", "Hanna", "Petra", "Alf", "Zebra"));
+        String maxElement = CollectionUtil.findMaxInList(stringList);
+        System.out.println(maxElement);
+        assertEquals("Zebra", maxElement);
+    }
+
+    @Test
+    void findMaxEmptyList() {
+        List<String> emptyList = new ArrayList<>();
+        Exception exception = assertThrows(NoSuchElementException.class, () -> CollectionUtil.findMaxInList(emptyList));
+        assertEquals("Liste ist leer", exception.getMessage());
     }
 
 }

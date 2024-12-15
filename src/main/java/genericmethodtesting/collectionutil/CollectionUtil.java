@@ -1,18 +1,17 @@
 package genericmethodtesting.collectionutil;
 
-import java.util.Collection;
 
-public class CollectionUtil {
+import java.util.*;
 
-    static <T extends Runnable> void runAll(Iterable<T> runnables) {
-        for (Runnable runnable : runnables) {
-            if (runnable != null) {
-                runnable.run();
-            }
-        }
+final class CollectionUtil {
+
+    static void runAll(Iterable<? extends Runnable> runnables) {
+        runnables.forEach(Runnable::run);
     }
 
     /**
+     * source und target können gelesen und geschrieben werden
+     *
      * @param source Quell Collection
      * @param target Ziel Collection
      * @param <E>    mindestens Number oder Unterklasse
@@ -37,5 +36,18 @@ public class CollectionUtil {
                 target.add(number);
             }
         }
+    }
+
+    static <T extends Comparable<T>> T findMaxInList(List<T> list) {
+        if (list.isEmpty()) {
+            throw new NoSuchElementException("Liste ist leer");
+        }
+
+        //wäre auch gegangen, hätte aber ein Optional zurückgegeben, also anderer ReturnType als T
+        //return list.stream().max(Comparator.naturalOrder());
+
+        //Hier auch okay,wäre eine Option mit Stream
+        //return list.stream().max(Comparable::compareTo).orElseThrow();
+        return Collections.max(list);
     }
 }
