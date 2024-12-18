@@ -22,9 +22,14 @@ public class StreamsTwoTesting {
         for (int i = 0; i < listWithDuplicates.size();i++){
             for ( int j = i + 1; j < listWithDuplicates.size();j++){
                 if(listWithDuplicates.get(i).equals(listWithDuplicates.get(j))){
-                    Set<Integer> listAsSet = listWithDuplicates.stream().collect(Collectors.toSet());
-                    listWithoutAnyDuplicates = listAsSet.stream().toList();
+                    // DISTINCT Returns a stream consisting of the distinct elements (according to Object. equals(Object)) of this stream
+                    listWithoutAnyDuplicates = listWithDuplicates.stream().distinct().collect(Collectors.toList());
+
+                    //Hier würde eine Liste in ein Set umgewandelt und DANN returned werden.
+                    //Set<Integer> listAsSet = listWithDuplicates.stream().collect(Collectors.toSet());
+                    //listWithoutAnyDuplicates = listAsSet.stream().toList();
                     return listWithoutAnyDuplicates;
+
                 }
             }
         }
@@ -32,11 +37,12 @@ public class StreamsTwoTesting {
         return List.of();
     }
 
+
+
+
     public static void main(String[] args) {
         List<Integer> myList = taskDuplicates();
         System.out.println(myList);
     }
-
-
 
 }
