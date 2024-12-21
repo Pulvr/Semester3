@@ -57,16 +57,21 @@ class Directory extends FileSystemElement {
 
     @Override
     Collection<FileSystemElement> elements() {
-
         List<FileSystemElement> allElements = new ArrayList<>();
-        allElements.add(this);
+        collectElements(allElements);
+        return allElements;
+    }
 
-        for(FileSystemElement element : elements){
+    private void collectElements(List<FileSystemElement> allElements) {
+        if (!allElements.contains(this)) {
+            allElements.add(this);
+        }
+
+        for (FileSystemElement element : elements) {
             allElements.add(element);
-            if (element.getClass().equals(Directory.class)){
-                return element.elements();
+            if (element instanceof Directory) {
+                ((Directory) element).collectElements(allElements); // Rekursiv die Unterelemente sammeln
             }
         }
-        return allElements;
     }
 }

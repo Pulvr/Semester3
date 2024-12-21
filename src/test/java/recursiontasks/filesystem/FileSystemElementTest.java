@@ -92,7 +92,7 @@ class FileSystemElementTest {
     @Test
     void dir1Elements(){
         var actual = dir1.elements();
-        var expected = List.of(dir1,file1,dir2,dir3,file2,dir3,dir4);
+        var expected = List.of(dir1,file1,dir2,dir3,file2,file3,dir4);
 
         for(FileSystemElement element : actual){
             System.out.print(element.name+", ");
@@ -105,6 +105,10 @@ class FileSystemElementTest {
     void dir3Elements(){
         var actual = dir3.elements();
         var expected = List.of(dir3,file2,file3);
+
+        for(FileSystemElement element : actual){
+            System.out.print(element.name+", ");
+        }
 
         assertIterableEquals(expected,actual);
     }
