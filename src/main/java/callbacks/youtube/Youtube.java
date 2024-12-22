@@ -11,8 +11,8 @@ class Youtube {
         chris.subscribe(anna);
         linus.subscribe(anna);
         chris.subscribe(linus);
-        linus.subscribe(chris);
         sara.subscribe(chris);
+        linus.subscribe(chris);
 
         chris.add(new Video("I dont wanna do this anymore"));
         linus.add(new Video("Uni ist zu hart für dich"));
