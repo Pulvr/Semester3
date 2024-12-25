@@ -1,7 +1,10 @@
 package callbacks.bigbrother;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Person {
-    //TODO
+    private final List<NameChangedCallback> subscribers = new ArrayList<>();
 
     private String name;
 
@@ -14,10 +17,11 @@ public class Person {
     }
 
     void setName(String name) {
-        //TODO
+        subscribers.forEach(subscriber -> subscriber.nameChanged(this.name, name));
+        this.name = name;
     }
 
     void subscribeNameChanged(NameChangedCallback subscriber) {
-        //TODO
+        subscribers.add(subscriber);
     }
 }

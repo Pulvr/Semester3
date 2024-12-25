@@ -1,5 +1,5 @@
 package callbacks.bigbrother;
 
 public interface NameChangedCallback {
-    void namChanged(String oldName, String newName);
+    void nameChanged(String oldName, String newName);
 }
