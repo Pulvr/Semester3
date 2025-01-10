@@ -16,7 +16,19 @@ class ObjectCasterTest {
 
     @Test
     void toSquaredIntegerListWithFloatTest() {
-        List<Integer> actualList = ObjectCaster.toSquaredIntegerList(List.of(1.1, 2, 3.3, 4));
-        assertIterableEquals(actualList, List.of(4, 16));
+        List<Integer> actualList = ObjectCaster.toSquaredIntegerList(List.of(1.1f, 2, 3.3f, 4));
+        assertIterableEquals(actualList, List.of(1, 4, 9, 16));
+    }
+
+    @Test
+    void emptyListTest() {
+        List<Integer> emptyList = ObjectCaster.toSquaredIntegerList(List.of());
+        assertIterableEquals(emptyList, List.of());
+    }
+
+    @Test
+    void listWithString() {
+        List<Integer> listWithStrings = ObjectCaster.toSquaredIntegerList(List.of("String", "1", 3, 3.3));
+        assertIterableEquals(listWithStrings, List.of(9, 9));
     }
 }

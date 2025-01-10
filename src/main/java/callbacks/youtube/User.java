@@ -3,8 +3,6 @@ package callbacks.youtube;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.function.BiConsumer;
-import java.util.function.Consumer;
 
 class User {
     private final String name;
@@ -17,18 +15,13 @@ class User {
 
     void add(Video video) {
         videos.add(video);
-        for (User sub: subscribers){
-            sub.notifySubscriberOfNewVideo(this,video);
+        for (User sub : subscribers) {
+            sub.notifySubscriberOfNewVideo(this, video);
         }
     }
 
     void subscribe(User subscriber) {
         subscriber.subscribers.add(this);
-    }
-
-    void notifySubs(User uploader, Video video, Consumer<String> callback){
-        BiConsumer<User, Video> userVideoBiConsumer = this::notifySubscriberOfNewVideo;
-        callback.accept(userVideoBiConsumer.toString());
     }
 
     private void notifySubscriberOfNewVideo(User uploader, Video video) {
