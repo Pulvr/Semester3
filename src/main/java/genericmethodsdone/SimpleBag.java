@@ -1,4 +1,4 @@
-package genericmethodtesting;
+package genericmethodsdone;
 
 import java.util.function.Function;
 

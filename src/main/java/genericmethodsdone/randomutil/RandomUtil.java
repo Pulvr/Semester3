@@ -1,4 +1,4 @@
-package genericmethodtesting.randomutil;
+package genericmethodsdone.randomutil;
 
 import java.util.Random;
 

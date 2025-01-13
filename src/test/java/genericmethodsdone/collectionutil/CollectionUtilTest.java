@@ -1,4 +1,4 @@
-package genericmethodtesting.collectionutil;
+package genericmethodsdone.collectionutil;
 
 import org.junit.jupiter.api.Test;
 

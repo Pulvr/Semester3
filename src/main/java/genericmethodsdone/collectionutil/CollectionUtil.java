@@ -1,4 +1,4 @@
-package genericmethodtesting.collectionutil;
+package genericmethodsdone.collectionutil;
 
 
 import java.util.*;
