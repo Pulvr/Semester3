@@ -1,4 +1,4 @@
-package higherorderfunctionstest;
+package higherorderfunctions.higherorderfunctionstest;
 
 import org.junit.jupiter.api.Test;
 
@@ -9,16 +9,16 @@ public class CombinerTest {
     private static final double TOLERANCE = 0.000000000001;
 
     @Test
-    void stringsWithSpaceCombiner(){
-        Combiner<String,String> withSpaceCombiner = (string1, string2) -> "%s %s".formatted(string1,string2);
+    void stringsWithSpaceCombiner() {
+        Combiner<String, String> withSpaceCombiner = (string1, string2) -> "%s %s".formatted(string1, string2);
 
-        String actual = withSpaceCombiner.combine("Steve","Wozniak");
+        String actual = withSpaceCombiner.combine("Steve", "Wozniak");
 
         assertThat(actual).isEqualTo("Steve Wozniak");
     }
 
     @Test
-    void integersAsStringsCombiner(){
+    void integersAsStringsCombiner() {
         Combiner<Integer, String> numbersAsStringCombiner = (number1, number2) -> "%s%s".formatted(number1, number2);
 
         String actual = numbersAsStringCombiner.combine(4, 2);
@@ -27,7 +27,7 @@ public class CombinerTest {
     }
 
     @Test
-    void integersAsDoubleCombiner(){
+    void integersAsDoubleCombiner() {
         Combiner<Integer, Double> numbersAsStringCombiner = (number1, number2) -> (double) (number1 + number2);
 
         Double actual = numbersAsStringCombiner.combine(4, 2);

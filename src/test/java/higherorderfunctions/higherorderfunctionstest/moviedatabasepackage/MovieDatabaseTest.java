@@ -1,5 +1,8 @@
-package higherorderfunctionstest.moviedatabasepackage;
+package higherorderfunctions.higherorderfunctionstest.moviedatabasepackage;
 
+import higherorderfunctions.higherorderfunctionstest.moviedatabasepackage.Category;
+import higherorderfunctions.higherorderfunctionstest.moviedatabasepackage.Movie;
+import higherorderfunctions.higherorderfunctionstest.moviedatabasepackage.MovieDatabase;
 import org.junit.jupiter.api.Test;
 
 import java.util.Collection;

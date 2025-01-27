@@ -1,13 +1,13 @@
-package higherorderfunctionstest;
+package higherorderfunctions.higherorderfunctionstest;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
 
-public class MyList<T> {
+public class MyListFertig<T> {
     private List<T> elements = new ArrayList<>();
 
-    public MyList(List<T> list) {
+    public MyListFertig(List<T> list) {
         this.elements = list;
     }
 

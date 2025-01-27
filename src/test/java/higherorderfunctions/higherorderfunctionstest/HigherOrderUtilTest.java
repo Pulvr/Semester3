@@ -1,5 +1,6 @@
-package higherorderfunctionstest;
+package higherorderfunctions.higherorderfunctionstest;
 
+import higherorderfunctions.higherorderfunctionstest.HigherOrderUtil;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;

@@ -1,4 +1,4 @@
-package higherorderfunctionstest;
+package higherorderfunctions.higherorderfunctionstest;
 
 import java.util.ArrayList;
 import java.util.List;

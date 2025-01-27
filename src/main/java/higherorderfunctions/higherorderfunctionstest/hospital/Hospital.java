@@ -1,4 +1,4 @@
-package higherorderfunctionstest.hospital;
+package higherorderfunctions.higherorderfunctionstest.hospital;
 
 import java.util.LinkedList;
 import java.util.function.Consumer;

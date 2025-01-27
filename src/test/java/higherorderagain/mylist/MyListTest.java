@@ -1,4 +1,4 @@
-package higherorderfunctionstest;
+package higherorderagain.mylist;
 
 import org.junit.jupiter.api.Test;
 
@@ -16,7 +16,13 @@ public class MyListTest {
     // contains mit Objekt ----------------------------------------------------------------------------------------------
     @Test
     void containsTrue() {
-        assertTrue(myList.contains("Dennis"));
+        assertTrue(myList.contains("Sara"));
+    }
+
+    @Test
+    void containsTrueInt() {
+        MyList<Integer> myIntList = new MyList<>(List.of(1, 2, 3));
+        assertTrue(myIntList.contains(3));
     }
 
     @Test
@@ -57,4 +63,6 @@ public class MyListTest {
         var myIntegerList = new MyList<>(List.of(1, 2, 3));
         assertFalse(myIntegerList.contains(element -> element.equals(4)));
     }
+
+
 }
